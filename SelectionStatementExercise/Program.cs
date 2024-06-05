@@ -73,12 +73,11 @@
 
             int userInput = int.Parse(Console.ReadLine());
 
-            while (userInput > 0)
+            while (userInput >=0) //Eternal Damnatiion .. I mean, "loop."
             {
-
                 if (userInput < favNumber)
                 {
-                    Console.WriteLine("Too low. Try again.");
+                    Console.WriteLine("Too low. I have a new favorite number now. Try again.");
                     Console.ReadLine();
                 }
                 else if (userInput == favNumber)
@@ -90,11 +89,13 @@
                     Console.ReadLine();
                     Console.Clear();
                     Console.WriteLine("Do it again!");
+                    favNumber = r.Next(1, 1000); // Generate a new random number
+                    Console.WriteLine("Guess my NEW favorite number:");
                     Console.ReadLine();
                 }
-                else if (userInput > favNumber) ;
+                else if (userInput > favNumber);
                 {
-                    Console.WriteLine("Too high. Try again.");
+                    Console.WriteLine("Too high. I have a new favorite number now. Try again.");
                     Console.ReadLine();
                 }
             }
