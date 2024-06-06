@@ -23,6 +23,9 @@
             Console.Clear();
 
             FavoriteNumber();
+
+            Console.WriteLine("Let's do it again!");
+            Repeat();
         }
         public static void FavoriteSubject()
             {//This method will get the user's favorite subject.
@@ -46,7 +49,7 @@
                         "Make sure to dip him up to the neck." +
                         "\nBut before that...");
                     break;
-                case "Phylosiphy":
+                case "Phylosophy":
                     Console.WriteLine("Great! We will promote you to Imp!" +
                         "\nAfter you do one small assignment...");
                     break;
@@ -63,21 +66,18 @@
             }
 
 
-    } public static void FavoriteNumber()
-        {//This method will prompt user to guess number
+    }    public static void FavoriteNumber()
+             {//This method will prompt user to guess number
             Console.WriteLine("Today we will begin in an exercise in boredom and repetition." +
                 "\nTo start the torture, guess my favorite number:");
 
-            Random r = new Random();
-            int favNumber = r.Next(1, 1000); //Generates a random number
-
+            int favNumber = 17;
+      
             int userInput = int.Parse(Console.ReadLine());
-
-            while (userInput >=0) //Eternal Damnatiion .. I mean, "loop."
-            {
+                
                 if (userInput < favNumber)
                 {
-                    Console.WriteLine("Too low. I have a new favorite number now. Try again.");
+                    Console.WriteLine("Too low. Try again.");
                     Console.ReadLine();
                 }
                 else if (userInput == favNumber)
@@ -89,15 +89,19 @@
                     Console.ReadLine();
                     Console.Clear();
                     Console.WriteLine("Do it again!");
-                    favNumber = r.Next(1, 1000); // Generate a new random number
-                    Console.WriteLine("Guess my NEW favorite number:");
-                    Console.ReadLine();
+
                 }
                 else if (userInput > favNumber);
-                {
-                    Console.WriteLine("Too high. I have a new favorite number now. Try again.");
-                    Console.ReadLine();
-                }
+            {
+                Console.WriteLine("Too high. Try again.");
+                Console.ReadLine();
+            }
+        } 
+        public static void Repeat()
+        {
+            while (true)
+            {
+                FavoriteNumber();
             }
         }
     }
